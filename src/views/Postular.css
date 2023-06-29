@@ -1,0 +1,25 @@
+.Nav-bar-post {
+    display:flex;
+    width: 100%;
+    font-size: larger;
+    
+}
+
+.Boton-seccion{
+    display: inline-block;
+    flex-grow: 1;
+    padding: 10px 20px;
+    background-color: #ccc;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+.Boton-seccion.active {
+    background-color: #0f60f7d8;
+  }
+
+.Boton-seccion:not(.active):hover {
+    background-color: #999;
+  }
