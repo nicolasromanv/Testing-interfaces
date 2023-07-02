@@ -4,7 +4,6 @@ import Postular from './views/Postular';
 import Index from './views/Index';
 import Resultados from './views/Resultados';
 
-
 function App() {
   return (
     <BrowserRouter>

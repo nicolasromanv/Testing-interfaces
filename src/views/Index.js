@@ -1,9 +1,21 @@
-import React from 'react';
+import React,  {useEffect, useState } from 'react';
 import banner from "./slide-home.jpg"
 import logo_usm from "./long-usm-icon.png"
 import { Link } from 'react-router-dom';
 
+
+
 function Index() {
+  const [botonHabilitado, setBotonHabilitado] = useState(false);
+  const [nombreProyecto, setNombreProyecto] = useState('');
+
+  useEffect(() => {
+    const isBotonHabilitado = localStorage.getItem('botonHabilitado') === 'true';
+    const storedNombreProyecto = localStorage.getItem('nombreProyecto') || '';
+    setBotonHabilitado(isBotonHabilitado);
+    setNombreProyecto(storedNombreProyecto);
+  }, []);
+
 
   return (
     <div>
@@ -21,7 +33,14 @@ function Index() {
               <p className="textBox withBorder">Inicio de postulaciones:   10/10/2020</p>
               <p className="textBox">Término postulaciones:   10/10/2020</p>
               <Link to="/postular" className="Boton-postular"><button className="Boton-postular" variant="contained" >Postular</button></Link>
-    
+              <div>
+                  {/* Renderizar el botón solo si está habilitado */}
+                  {botonHabilitado && (
+                    <Link to="/postular"><button disabled={!botonHabilitado} className="Boton-resultados2">
+                      {nombreProyecto}
+                    </button></Link>
+                  )}
+              </div>
             </div>
             <div className="square">
             <b>Testing asignatura 2</b>

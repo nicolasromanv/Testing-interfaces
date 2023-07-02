@@ -14,14 +14,14 @@
 .Banner {
   width: 100%;
   position: relative;
-  z-index: 1; /* Agregamos un z-index al Banner para asegurarnos de que esté por debajo de logo-usm-head */
+  z-index: 1; 
 }
 
 .logo-usm-head {
   background-color: #ffffff;
   position: relative;
 
-  z-index: 2; /* Asignamos un z-index más alto para que logo-usm-head esté por encima del Banner */
+  z-index: 2; 
 }
 
 .App-header {
